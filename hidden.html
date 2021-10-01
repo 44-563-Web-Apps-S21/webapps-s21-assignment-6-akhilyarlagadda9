@@ -14,10 +14,12 @@
             <label for="secret">Enter the secret word</label>
             <input type="password" id="secret" name="secret" value="Secret"> <br>
         </div>
+        <div>&nbsp;</div>
         <div>
             <label for="guess">Enter a guess </label>
             <input type="text" id="guess" name="guess" autofocus> <br>
         </div>
+        <div>&nbsp;</div>
         <input type="button" onclick="processPhrase()" value="Check the guess">
     </form>
     <p id="result">"Correct and Wrong Count displayed here!"</p>
@@ -35,7 +37,7 @@
                 alert("Access denied")
                 wrong = wrong + 1
             }
-            out.innerHTML = "Number of Right Count is " + correct + " Number of Wrong Count is " + wrong;
+            out.innerHTML = "Number of Right Count is " + correct + ", Number of Wrong Count is " + wrong + "."
         }
     </script>
 </body>
