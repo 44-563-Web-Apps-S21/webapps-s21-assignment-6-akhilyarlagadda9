@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HIDDEN</title>
+</head>
+
+<body>
+
+    <h2>Hidden Things by AKHIL BABU YARLAGADDA</h2>
+
+    <form>
+        <div>
+            <label for="secret">Enter the secret word</label>
+            <input type="password" id="secret" name="secret" value="Secret"> <br>
+        </div>
+        <div>
+            <label for="guess">Enter a guess </label>
+            <input type="text" id="guess" name="guess" autofocus> <br>
+        </div>
+        <input type="button" onclick="processPhrase()" value="Check the guess">
+    </form>
+    <p id="result">"Correct and Wrong Count displayed here!"</p>
+
+    <script>
+        let correct = 0, wrong = 0
+        function processPhrase() {
+            secret = document.getElementById("secret").value
+            guess = document.getElementById("guess").value
+            out = document.getElementById("result")
+            if (secret == guess) {
+                alert("Access Allowed")
+                correct = correct + 1
+            } else {
+                alert("Access denied")
+                wrong = wrong + 1
+            }
+            out.innerHTML = "Number of Right Count is " + correct + " Number of Wrong Count is " + wrong;
+        }
+    </script>
+</body>
+
+</html>
