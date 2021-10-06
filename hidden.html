@@ -24,8 +24,14 @@
     </form>
     <p id="result">"Correct and Wrong Count displayed here!"</p>
 
+    <div class="container">
+        <img id="img" src="ant.jpg" alt="ANT" width="200" height="200" onclick="newImage()">
+    </div>
+
+
+
     <script>
-        let correct = 0, wrong = 0
+        var correct = 0, wrong = 0, usingImage = 1;
         function processPhrase() {
             secret = document.getElementById("secret").value
             guess = document.getElementById("guess").value
@@ -38,6 +44,22 @@
                 wrong = wrong + 1
             }
             out.innerHTML = "Number of Right Count is " + correct + ", Number of Wrong Count is " + wrong + "."
+        }
+        function newImage(){
+            switch(usingImage){
+                case 1 : 
+                document.getElementById("img").src= "lion.jpg"
+                usingImage = 2
+                break
+                case 2 : 
+                document.getElementById("img").src= "rabbit.jpg"
+                usingImage = 3
+                break
+                case 3 : 
+                document.getElementById("img").src="ant.jpg"
+                usingImage = 1
+                break
+            }  
         }
     </script>
 </body>
