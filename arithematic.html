@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <tile>ARTHEMATIC</tile>
+    <title>ARTHEMATIC</title>
 </head>
 
 <body>
@@ -28,19 +28,47 @@
 
     <p id="result">Result will be displayed here! </p>
 
-    <script>
+    <form>
+        <input type="radio" id="plus" name="arthematic" value="plus" onclick="processRadio()">
+        <label for="plus">Plus</label></br>
+        <input type="radio" id="minus" name="arthematic" value="minus" onclick="processRadio()">
+        <label for="minus">Minus</label></br>
+        <input type="radio" id="times" name="arthematic" value="times" onclick="processRadio()">
+        <label for="times">Times</label></br>
+        <input type="radio" id="divide" name="arthematic" value="divide" onclick="processRadio()">
+        <label for="divide">Divide</label></br>
+    </form>
 
+    <p id="result2">Result will be displayed here! </p>
+
+    <script>
         function powers() {
             let result = [];
             num1 = document.getElementById("first_num").value
             num2 = document.getElementById("second_num").value
             out = document.getElementById("result")
-
             for (i = 0; i < num2; i++) {
                 let power = Math.pow(num1, i + 1)
                 result.push(power)
             }
             out.innerHTML = "Powers of " + num1 + " are: " + result
+        }
+        function processRadio() {
+            firstnum = document.getElementById("first_num").value
+            secondnum = document.getElementById("second_num").value
+            firstnum = (Number)(firstnum);
+            secondnum = (Number)(secondnum);
+            if (document.getElementById("plus").checked) {
+                firstnum += secondnum;
+            } else if (document.getElementById("minus").checked) {
+                firstnum -= secondnum;
+            } else if (document.getElementById("times").checked) {
+                firstnum *= secondnum;
+            } else {
+                firstnum /= secondnum;
+            }
+            out = document.getElementById("result2")
+            out.innerHTML = firstnum
         }
     </script>
 
